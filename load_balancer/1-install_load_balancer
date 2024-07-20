@@ -13,7 +13,7 @@ server_config=\
 frontend gershom-frontend
         bind *:80
         mode http
-        default_backend oreste-backend
+        default_backend gershom-backend
 backend gershom-backend
         balance roundrobin
         server 6170-web-01 98.80.123.177 check
