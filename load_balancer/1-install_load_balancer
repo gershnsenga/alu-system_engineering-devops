@@ -10,11 +10,11 @@ apt-get -y install haproxy
 # edit config file
 server_config=\
 "
-frontend oreste-frontend
+frontend gershom-frontend
         bind *:80
         mode http
         default_backend oreste-backend
-backend oreste-backend
+backend gershom-backend
         balance roundrobin
         server 6170-web-01 98.80.123.177 check
         server 6170-web-02 54.235.25.112 check
