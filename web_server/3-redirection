@@ -1,35 +1,12 @@
 #!/usr/bin/env bash
-# Configures Nginx server with a 301 redirect
+# Script that configures a new Ubuntu machine with the following requirements:
 
-# Update package lists
-apt-get update
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "This is Gershom from Holberton School :)" | sudo tee /var/www/html/index.html > /dev/null
 
-# Install Nginx
-apt-get install -y nginx
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.github.com\/oreste-abizera permanent;"
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
-# Create a simple HTML file with the required content
-echo "Holberton School" > /var/www/html/index.html
-
-# Configure Nginx for the redirect
-redirect_config="server {
-    listen 80;
-    server_name _;
-    
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-    }
-
-    location / {
-        root /var/www/html;
-        index index.html index.htm;
-    }
-}"
-
-# Apply the new configuration
-echo "$redirect_config" > /etc/nginx/sites-available/default
-
-# Restart Nginx without using systemctl
-/etc/init.d/nginx restart
-
-# Ensure Nginx is running
-/etc/init.d/nginx status
+sudo service nginx restart
