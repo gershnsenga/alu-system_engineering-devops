@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 72px;
+            margin-bottom: 0;
+            color: #e74c3c;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            margin-top: 0;
+            color: #7f8c8d;
+        }
+        
+        .message {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .french-message {
+            font-size: 28px;
+            font-style: italic;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        .search-form {
+            margin-bottom: 30px;
+        }
+        
+        .search-input {
+            padding: 10px;
+            width: 60%;
+            font-size: 16px;
+        }
+        
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .links a {
+            color: #3498db;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p class="subtitle">Oops! Page not found</p>
+        <p class="message">The page you're looking for seems to have vanished into the digital void.</p>
+        <p class="french-message">"Ceci n'est pas une page"</p>
+
+        <form class="search-form" action="/search" method="get">
+            <input type="text" name="q" placeholder="Search our site" class="search-input">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+
+        <p>Here are some helpful links:</p>
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="/sitemap">Sitemap</a>
+            <a href="/contact">Contact Us</a>
+        </div>
+    </div>
+    <script>
+        console.error('404 error occurred for page:', window.location.pathname);
+    </script>
+</body>
+
+</html>
