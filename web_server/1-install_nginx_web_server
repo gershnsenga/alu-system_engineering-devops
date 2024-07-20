@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script installs and configures Nginx on Ubuntu
+
+# Update package lists
+apt-get update
+
+# Install Nginx
+apt-get install -y nginx
+
+# Create a simple HTML file with the required content
+echo "Holberton School" > /var/www/html/index.html
+
+# Configure Nginx to listen on port 80
+sed -i 's/listen 80 default_server;/listen 80;/' /etc/nginx/sites-available/default
+
+# Restart Nginx without using systemctl
+/etc/init.d/nginx restart
+
+# Ensure Nginx is running
+/etc/init.d/nginx status
