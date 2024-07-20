@@ -7,7 +7,7 @@ sudo ufw allow 'Nginx HTTP'
 echo "This is Gershom from Holberton School :)" | sudo tee /var/www/html/index.html > /dev/null
 
 # codes to redirect a specific endpoint (eg: redirect /redirect_me to https://www.github.com/oreste-abizera)
-string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.github.com\/oreste-abizera permanent;"
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.github.com\/gersh-nsenga permanent;"
 sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
 # codes to create error page and add a redirect for error 404
